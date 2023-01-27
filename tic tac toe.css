@@ -19,12 +19,30 @@
     background-color: #ccc;
     
   }
-  button{
+  .check{
     opacity: 0;
     width: 100%;
     height: 100%;
   }
-  button:hover{
+  .check:hover{
     background-color: rgb(189, 174, 255);
     opacity: 0.1;
   }
+
+h1{
+  position: absolute;
+  left: 45%;
+  top: 10%;
+  opacity: 0;
+}
+.active{
+  opacity: 1;
+}
+.restart{
+  position: absolute;
+  left: 45%;
+  width: 100px;
+  color: red;
+  height: 100px;
+  top: 85%;
+}
