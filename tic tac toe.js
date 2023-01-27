@@ -1,34 +1,58 @@
 const Grid = document.querySelectorAll('.cell');
 const cells = Array.from(Grid);
-let range = 1;
+let range = 0;
+let condition = 1;
+let condition2 = 1;
+
+
+const winningCondition = [
+    [cells[1] == cells[2] == cells[3]],
+    [cells[4] == cells[5] == cells[6]],
+    [cells[7] == cells[8] == cells[9]],
+    [cells[1] == cells[4] == cells[7]],
+    [cells[2] == cells[5] == cells[8]],
+    [cells[3] == cells[6] == cells[9]],
+    [cells[1] == cells[5] == cells[9]],
+    [cells[3] == cells[5] == cells[7]],
+]
+
 cells.forEach(index => 
 {
     index.value = range;
-    range++;
-
 })
 //console.table(cells);
 
 function handleUpdate(e){
 
-    this.style.background = "cyan"
+    condition = 1;
 
-    this.value = 69
+    this.style.background = "cyan";
 
-    cells.splice(cells.indexOf(69), 1);
+    this.value = 2;
 
-
-    
+    console.log(1)
+     
+    while( (condition <= 1 && condition2 < 5)){
     var num = Math.floor(Math.random() * cells.length);
 
-    if(cells[num].value !== 69 ){cells[num].innerHTML = 'red'}
+    console.log(2)
 
-    cells.splice(num, 1);
+    if(cells[num].value == 0){
 
-    console.table(cells)
-        
-        
+        console.log(3)
 
+        cells[num].innerHTML = 'red'
+
+        cells[num].value = 1
+
+        condition++
+        condition2++
+
+
+    }
+
+
+    }
 
 }
 
